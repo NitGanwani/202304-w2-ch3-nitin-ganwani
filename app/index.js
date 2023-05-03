@@ -1,6 +1,5 @@
-let slots = document.querySelectorAll(".grid div");
+const slots = document.querySelectorAll(".grid div");
 const result = document.querySelector(".result");
-const display = document.querySelector(".display-player");
 const notAvailable = document.querySelector(".not-available");
 const displayCurrentPlayer = document.querySelector(".current-player");
 let currentPlayer = 1;
@@ -99,6 +98,7 @@ const checkAllSlots = () => {
       removeClickHandlersFromSlots();
       return;
     }
+
     if (
       slot1.classList.contains("player-two") &&
       slot2.classList.contains("player-two") &&
@@ -126,13 +126,13 @@ const playGame = () => {
         slots[slotPosition + 7].classList.contains("checked") &&
         !slots[slotPosition].classList.contains("checked")
       ) {
-        if (currentPlayer == 1) {
+        if (currentPlayer === 1) {
           slots[slotPosition].classList.add("checked");
           slots[slotPosition].classList.add("player-one");
           currentPlayer = 2;
           displayCurrentPlayer.innerHTML = currentPlayer;
           displayCurrentPlayer.style.color = "rgb(255, 255, 255)";
-        } else if (currentPlayer == 2) {
+        } else if (currentPlayer === 2) {
           slots[slotPosition].classList.add("checked");
           slots[slotPosition].classList.add("player-two");
           currentPlayer = 1;
@@ -145,6 +145,7 @@ const playGame = () => {
           notAvailable.innerHTML = "";
         }, 1000);
       }
+
       checkAllSlots();
     };
   }
