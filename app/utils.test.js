@@ -9,3 +9,7 @@ import {
   removeClickHandlersFromSlots,
   playGame,
 } from "./utils";
+
+describe("Given a removeClickHandlersFromSlots function" () => {
+  describe("When it receives ")
+})
